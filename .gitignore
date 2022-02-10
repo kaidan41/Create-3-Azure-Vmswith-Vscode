@@ -1,7 +1,9 @@
-##ignore all files
+terraform
+.exe
+*.exe
+*.logs
 .logs
 .txt
+*.txt
 .sh
-.exe
-terraform/
-.gitignore
+*.sh
