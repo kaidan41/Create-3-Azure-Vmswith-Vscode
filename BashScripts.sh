@@ -1,11 +1,11 @@
 #!/bin/bash
 #Conect and set Subscription Context in Azure
 az login
-az account set --subscription "xxxxxxxxxxxxxxxxxxxxxxxxx"
+az account set --subscription "ba3ceec8-c343-46c0-9180-217762f60e1a"
 
 
 #Set Variables for Storage account 
-RESOURCE_GROUP_NAME=RG-Terraform
+RESOURCE_GROUP_NAME=RG-ISTIO
 STORAGE_ACCOUNT_NAME=stoprojterraform001
 CONTAINER_NAME=container
 

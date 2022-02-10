@@ -1,17 +1,22 @@
-# Provider
+# We strongly recommend using the required_providers block to set the
+# Azure Provider source and version being used
 terraform {
-  required_version = ">= 0.14, < 0.15"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.91.0"
+    }
+  }
 }
 
+# Configure the Microsoft Azure Provider
 provider "azurerm" {
-    subscription_id   = "Enter your Subscription"
-    tenant_id         = "Enter your Tenant"
-    features {}
+  features {}
 }
 
 # Resource Group
 resource "azurerm_resource_group" "rg" {
-  name     =  var.rgname
-  location =  var.location
+  name     = var.rgname
+  location = var.location
 }
 
