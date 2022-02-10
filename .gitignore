@@ -2,3 +2,4 @@
 *.logs
 .txt
 .sh
+*.exe
