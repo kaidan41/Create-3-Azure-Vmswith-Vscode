@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #!/bin/bash
 #Conect and set Subscription Context in Azure
 az login
@@ -58,4 +58,4 @@ echo "storage_account_name: $STORAGE_ACCOUNT_NAME"
 echo "container_name: $CONTAINER_NAME"
 echo "access_key: $ACCOUNT_KEY"
 
->>>>>>> 6bcd9e104068a7aa716a4f467c5ac991c41a1732
+
