@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 resource "azurerm_network_security_group" "ISTIO-VM" {
   name                = var.nsg
   location            = azurerm_resource_group.rg.location
@@ -19,38 +18,38 @@ resource "azurerm_network_security_group" "ISTIO-VM" {
   tags = {
     environment = "Istio-Lab"
   }
-  depends_on = [azurerm_network_interface.nic ]
+  depends_on = [azurerm_network_interface.nic]
 }
 
 resource "azurerm_subnet_network_security_group_association" "mgmt-nsg-association" {
-    subnet_id                 = azurerm_subnet.subnet.id
-    network_security_group_id = azurerm_network_security_group.ISTIO-VM.id
-=======
-resource "azurerm_network_security_group" "ISTIO-VM" {
-  name                = var.nsg
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  subnet_id                 = azurerm_subnet.subnet.id
+  network_security_group_id = azurerm_network_security_group.ISTIO-VM.id
 
-  security_rule {
-    name                       = "AllowSSH"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "22"
-    source_address_prefix      = "177.143.69.241/32"
-    destination_address_prefix = "*"
+  resource "azurerm_network_security_group" "ISTIO-VM" {
+    name                = var.nsg
+    location            = azurerm_resource_group.rg.location
+    resource_group_name = azurerm_resource_group.rg.name
+
+    security_rule {
+      name                       = "AllowSSH"
+      priority                   = 100
+      direction                  = "Inbound"
+      access                     = "Allow"
+      protocol                   = "Tcp"
+      source_port_range          = "*"
+      destination_port_range     = "22"
+      source_address_prefix      = "177.143.69.241/32"
+      destination_address_prefix = "*"
+    }
+
+    tags = {
+      environment = "Istio-Lab"
+    }
+    depends_on = [azurerm_network_interface.nic]
   }
 
-  tags = {
-    environment = "Istio-Lab"
-  }
-  depends_on = [azurerm_network_interface.nic ]
-}
-
-resource "azurerm_subnet_network_security_group_association" "mgmt-nsg-association" {
+  resource "azurerm_subnet_network_security_group_association" "mgmt-nsg-association" {
     subnet_id                 = azurerm_subnet.subnet.id
     network_security_group_id = azurerm_network_security_group.ISTIO-VM.id
->>>>>>> 6bcd9e104068a7aa716a4f467c5ac991c41a1732
+  }
 }
