@@ -7,7 +7,7 @@ resource "azurerm_linux_virtual_machine" "ISTIO-VM" {
   size                            = "Standard_B2s"
   disable_password_authentication = false
   admin_username                  = "kaidan"
-  admin_password                  = "@Caue2020#@!"
+  admin_password                  = "@xxxxxxxxx2020"
   computer_name                   = each.value
   network_interface_ids           = [azurerm_network_interface.nic[each.key].id]
 
